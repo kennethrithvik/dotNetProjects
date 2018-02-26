@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="OnlineTestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CorrectOption">
+          <Key>
+            <PropertyRef Name="qid" />
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="qid" Type="tinyint" Nullable="false" />
+          <Property Name="oid" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Options">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="qid" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="qid" />
+          </Key>
+          <Property Name="qid" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" />
+          <Property Name="marks" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="uid" Type="tinyint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="login" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="score" Type="int" Nullable="false" />
+          <Property Name="Status" Type="tinyint" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CorrectOption_Options">
+          <End Role="Options" Type="Self.Options" Multiplicity="1" />
+          <End Role="CorrectOption" Type="Self.CorrectOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Options">
+              <PropertyRef Name="oid" />
+            </Principal>
+            <Dependent Role="CorrectOption">
+              <PropertyRef Name="oid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CorrectOption_Question1">
+          <End Role="Question" Type="Self.Question" Multiplicity="1" />
+          <End Role="CorrectOption" Type="Self.CorrectOption" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="qid" />
+            </Principal>
+            <Dependent Role="CorrectOption">
+              <PropertyRef Name="qid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Options_Question">
+          <End Role="Question" Type="Self.Question" Multiplicity="1" />
+          <End Role="Options" Type="Self.Options" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="qid" />
+            </Principal>
+            <Dependent Role="Options">
+              <PropertyRef Name="qid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="OnlineTestModelStoreContainer">
+          <EntitySet Name="CorrectOption" EntityType="Self.CorrectOption" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Options" EntityType="Self.Options" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Question" EntityType="Self.Question" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CorrectOption_Options" Association="Self.FK_CorrectOption_Options">
+            <End Role="Options" EntitySet="Options" />
+            <End Role="CorrectOption" EntitySet="CorrectOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CorrectOption_Question1" Association="Self.FK_CorrectOption_Question1">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="CorrectOption" EntitySet="CorrectOption" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Options_Question" Association="Self.FK_Options_Question">
+            <End Role="Question" EntitySet="Question" />
+            <End Role="Options" EntitySet="Options" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="OnlineTestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="qid" />
+          </Key>
+          <Property Name="qid" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="marks" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Options" Relationship="OnlineTestModel.FK_Options_Question" FromRole="Question" ToRole="Option" />
+          <NavigationProperty Name="Options1" Relationship="OnlineTestModel.CorrectOption" FromRole="Question" ToRole="Option" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="uid" />
+          </Key>
+          <Property Name="uid" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="score" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Byte" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="OnlineTestEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Questions" EntityType="Self.Question" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="Options" EntityType="OnlineTestModel.Option" />
+          <AssociationSet Name="FK_Options_Question" Association="OnlineTestModel.FK_Options_Question">
+            <End Role="Question" EntitySet="Questions" />
+            <End Role="Option" EntitySet="Options" />
+          </AssociationSet>
+          <AssociationSet Name="CorrectOption" Association="OnlineTestModel.CorrectOption">
+            <End Role="Option" EntitySet="Options" />
+            <End Role="Question" EntitySet="Questions" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Option">
+          <Key>
+            <PropertyRef Name="oid" />
+          </Key>
+          <Property Name="oid" Type="Byte" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="qid" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="Question" Relationship="OnlineTestModel.FK_Options_Question" FromRole="Option" ToRole="Question" />
+          <NavigationProperty Name="Questions" Relationship="OnlineTestModel.CorrectOption" FromRole="Option" ToRole="Question" />
+        </EntityType>
+        <Association Name="FK_Options_Question">
+          <End Type="OnlineTestModel.Question" Role="Question" Multiplicity="1" />
+          <End Type="OnlineTestModel.Option" Role="Option" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Question">
+              <PropertyRef Name="qid" />
+            </Principal>
+            <Dependent Role="Option">
+              <PropertyRef Name="qid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="CorrectOption">
+          <End Type="OnlineTestModel.Option" Role="Option" Multiplicity="*" />
+          <End Type="OnlineTestModel.Question" Role="Question" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="OnlineTestModelStoreContainer" CdmEntityContainer="OnlineTestEntities1">
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="OnlineTestModel.Question">
+              <MappingFragment StoreEntitySet="Question">
+                <ScalarProperty Name="qid" ColumnName="qid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="marks" ColumnName="marks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="OnlineTestModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="score" ColumnName="score" />
+                <ScalarProperty Name="uid" ColumnName="uid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Options">
+            <EntityTypeMapping TypeName="OnlineTestModel.Option">
+              <MappingFragment StoreEntitySet="Options">
+                <ScalarProperty Name="qid" ColumnName="qid" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="oid" ColumnName="oid" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="CorrectOption" TypeName="OnlineTestModel.CorrectOption" StoreEntitySet="CorrectOption">
+            <EndProperty Name="Question">
+              <ScalarProperty Name="qid" ColumnName="qid" />
+            </EndProperty>
+            <EndProperty Name="Option">
+              <ScalarProperty Name="oid" ColumnName="oid" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

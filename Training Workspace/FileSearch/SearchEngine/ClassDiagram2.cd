@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SearchEngine.AbstractRootFinder" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEAAQAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>AbstractRootFinder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SearchEngine.ActiveRootFinder" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ActiveRootFinder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SearchEngine.FileSearcher" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAABAAAAAAAAAAAAQAAAAAAAAAgAAA=</HashCode>
+      <FileName>FileSearcher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SearchEngine.Program" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAEAQABIAAAAAAAAAAGAAABABAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SearchEngine.RootFinderFactory" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAABAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>RootFinderFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SearchEngine.SearchManager" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAgAAAAAAAAAAAAAAAQAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>SearchManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SearchEngine.SearchResult" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAEACAABAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>SearchResult.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SearchEngine.SystemRootFinder" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SystemRootFinder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="SearchEngine.IRootFinder" Collapsed="true">
+    <Position X="5.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>IRootFinder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="SearchEngine.Roots" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Roots.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

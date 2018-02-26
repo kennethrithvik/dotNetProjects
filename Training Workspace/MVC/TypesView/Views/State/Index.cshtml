@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ControllerDemo.Models.State>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(model=>model.StateID)</th>
+        <th>@Html.DisplayNameFor(model => model.Name)</th>
+    </tr>
+    @foreach(var data in ViewBag.state)
+    {
+        <tr>
+            <td>
+               @data.StateID
+            </td>
+            <td>
+                @data.Name
+            </td>
+        </tr>
+    }
+</table>

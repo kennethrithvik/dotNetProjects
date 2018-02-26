@@ -1,0 +1,34 @@
+﻿@model MVCDemo.Models.CabData
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CabData</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CabType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CabType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Capacity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Capacity)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CabNo }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

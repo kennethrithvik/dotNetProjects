@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Contacts JQuery</title>
+    <style>
+        div {
+            border-radius: 8px;
+            text-align: center;
+            width: 40%;
+            position: absolute;
+            top: 100px;
+            left: 400px;
+        }
+
+        table {
+            background: lightskyblue;
+            text-align: center;
+            border: 2px dotted white;
+        }
+    </style>
+    
+</head>
+<body>
+    <input type="text" placeholder="Enter name to Add" id="txtName" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" placeholder="Enter number" id="txtNo" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" value="Add" id="btnAdd" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+    <br />
+    <br />
+    <br />
+    <div>
+        <table id="tab"></table>
+    </div>
+    <script src="../Scripts/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+
+        var names = [];
+        $("#btnAdd").click(function () {
+            var obj = new Object();
+            obj.nm = $("#txtName").val();
+            obj.no = $("#txtNo").val();
+            names.push(obj);
+            displayData();
+        });
+
+        function deleteData(ind) {
+            names.splice(ind, 1);
+            displayData();
+        }
+
+        function displayData() {
+            var str = "<tr><th>&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;Mobile Number&nbsp;&nbsp;&nbsp;</th></tr>";
+            $.each(names, function(i, item) {
+                str += "<tr><td>" + item.nm + "</td><td>" + item.no
+                    + "</td><td><input type=button class=btnDel value=Delete onclick=deleteData("
+                    + i + ") /></td></tr>";
+            });
+            $("#tab").html(str);
+        }
+
+    </script>
+
+</body>
+</html>

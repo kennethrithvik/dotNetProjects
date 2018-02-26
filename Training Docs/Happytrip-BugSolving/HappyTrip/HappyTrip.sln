@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{799FC2B1-85AE-46F4-B581-B48B9933F005}"
+	ProjectSection(SolutionItems) = preProject
+		HappyTrip.vsmdi = HappyTrip.vsmdi
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyTripWebApp", "HappyTripWebApp\HappyTripWebApp.csproj", "{6362D959-7E9D-432D-B2D6-2284561F4B91}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyTrip.Model.Entities", "HappyTrip.Model.Entities\HappyTrip.Model.Entities.csproj", "{29BC1011-796A-4A3D-BF71-181CAC493BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyTrip.Model.BusinessLayer", "HappyTrip.Model.BusinessLayer\HappyTrip.Model.BusinessLayer.csproj", "{42280AE7-9A5B-42B7-B251-73C6E2417449}"
+	ProjectSection(ProjectDependencies) = postProject
+		{183F81DF-8348-4C1A-943A-77C01655B905} = {183F81DF-8348-4C1A-943A-77C01655B905}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyTrip.DataAccessLayer", "HappyTrip.DataAccessLayer\HappyTrip.DataAccessLayer.csproj", "{14A9AAF2-DB52-4ED7-9F3B-A2C02EBC2E17}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyTrip.Model.PaymentService", "HappyTrip.Model.PaymentService\HappyTrip.Model.PaymentService.csproj", "{397CA798-1500-4314-82AD-39D2B2F48F68}"
+	ProjectSection(ProjectDependencies) = postProject
+		{183F81DF-8348-4C1A-943A-77C01655B905} = {183F81DF-8348-4C1A-943A-77C01655B905}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway", "PaymentGateway\PaymentGateway.csproj", "{CC505F5D-64E2-401A-9D4E-A60622F4EFFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGateway.WebHost", "PaymentGateway.WebHost\PaymentGateway.WebHost.csproj", "{183F81DF-8348-4C1A-943A-77C01655B905}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HappyTrip.UnitTestLayer", "HappyTrip.UnitTestLayer\HappyTrip.UnitTestLayer.csproj", "{001C1D67-CACF-4B15-8DC1-31128A9E9808}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 9
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://win-pv1ir8k0tko:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = HappyTrip.DataAccessLayer\\HappyTrip.DataAccessLayer.csproj
+		SccProjectName1 = HappyTrip.DataAccessLayer
+		SccLocalPath1 = HappyTrip.DataAccessLayer
+		SccProjectUniqueName2 = HappyTrip.Model.BusinessLayer\\HappyTrip.Model.BusinessLayer.csproj
+		SccProjectName2 = HappyTrip.Model.BusinessLayer
+		SccLocalPath2 = HappyTrip.Model.BusinessLayer
+		SccProjectUniqueName3 = HappyTrip.Model.Entities\\HappyTrip.Model.Entities.csproj
+		SccProjectName3 = HappyTrip.Model.Entities
+		SccLocalPath3 = HappyTrip.Model.Entities
+		SccProjectUniqueName4 = HappyTrip.Model.PaymentService\\HappyTrip.Model.PaymentService.csproj
+		SccProjectName4 = HappyTrip.Model.PaymentService
+		SccLocalPath4 = HappyTrip.Model.PaymentService
+		SccProjectUniqueName5 = HappyTrip.UnitTestLayer\\HappyTrip.UnitTestLayer.csproj
+		SccProjectName5 = HappyTrip.UnitTestLayer
+		SccLocalPath5 = HappyTrip.UnitTestLayer
+		SccProjectUniqueName6 = HappyTripWebApp\\HappyTripWebApp.csproj
+		SccProjectName6 = HappyTripWebApp
+		SccLocalPath6 = HappyTripWebApp
+		SccProjectUniqueName7 = PaymentGateway.WebHost\\PaymentGateway.WebHost.csproj
+		SccProjectName7 = PaymentGateway.WebHost
+		SccLocalPath7 = PaymentGateway.WebHost
+		SccProjectUniqueName8 = PaymentGateway\\PaymentGateway.csproj
+		SccProjectName8 = PaymentGateway
+		SccLocalPath8 = PaymentGateway
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6362D959-7E9D-432D-B2D6-2284561F4B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6362D959-7E9D-432D-B2D6-2284561F4B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6362D959-7E9D-432D-B2D6-2284561F4B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6362D959-7E9D-432D-B2D6-2284561F4B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29BC1011-796A-4A3D-BF71-181CAC493BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29BC1011-796A-4A3D-BF71-181CAC493BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29BC1011-796A-4A3D-BF71-181CAC493BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29BC1011-796A-4A3D-BF71-181CAC493BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42280AE7-9A5B-42B7-B251-73C6E2417449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42280AE7-9A5B-42B7-B251-73C6E2417449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42280AE7-9A5B-42B7-B251-73C6E2417449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42280AE7-9A5B-42B7-B251-73C6E2417449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14A9AAF2-DB52-4ED7-9F3B-A2C02EBC2E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14A9AAF2-DB52-4ED7-9F3B-A2C02EBC2E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14A9AAF2-DB52-4ED7-9F3B-A2C02EBC2E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14A9AAF2-DB52-4ED7-9F3B-A2C02EBC2E17}.Release|Any CPU.Build.0 = Release|Any CPU
+		{397CA798-1500-4314-82AD-39D2B2F48F68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{397CA798-1500-4314-82AD-39D2B2F48F68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{397CA798-1500-4314-82AD-39D2B2F48F68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{397CA798-1500-4314-82AD-39D2B2F48F68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC505F5D-64E2-401A-9D4E-A60622F4EFFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC505F5D-64E2-401A-9D4E-A60622F4EFFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC505F5D-64E2-401A-9D4E-A60622F4EFFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC505F5D-64E2-401A-9D4E-A60622F4EFFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{183F81DF-8348-4C1A-943A-77C01655B905}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{183F81DF-8348-4C1A-943A-77C01655B905}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{183F81DF-8348-4C1A-943A-77C01655B905}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{183F81DF-8348-4C1A-943A-77C01655B905}.Release|Any CPU.Build.0 = Release|Any CPU
+		{001C1D67-CACF-4B15-8DC1-31128A9E9808}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{001C1D67-CACF-4B15-8DC1-31128A9E9808}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{001C1D67-CACF-4B15-8DC1-31128A9E9808}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{001C1D67-CACF-4B15-8DC1-31128A9E9808}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = HappyTrip.vsmdi
+	EndGlobalSection
+EndGlobal

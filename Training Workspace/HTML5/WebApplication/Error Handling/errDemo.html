@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+</head>
+
+<body>
+<div id='demobox'></div>
+
+<br/>
+<br/>
+<input type="text" id="txtno1"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" id="txtno2"/>
+    <br />
+<input type="button" id="plus" value="+"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" id="minus" value="-" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<script>
+    onerror = Handler_err;                                                         //Custom function to handle errors... no need of try catch
+    var n1, n2;
+    function Validate() {
+        n1 = document.getElementById('txtno1').value;
+        n2 = document.getElementById('txtno2').value;
+        try {                                                                      //try block
+            if (isNaN(n1) || isNaN(n2)) {
+                throw "not a number";                                              //Throw Exception
+            } else if (n1 == "" || n2 == "") {
+                throw "Empty";
+            }
+        }
+        catch (e) {                                                              //Catch block
+            //document.getElementById('demobox').innerText = e.message;
+            throw e;
+        }
+    }
+
+    function Add() {
+        Validate();
+        //debugger;                                                                //start debugging                              
+        n1 = Number(n1);
+        n2 = Number(n2);
+        document.getElementById('demobox').innerText = n1+n2;
+    }
+
+    function Sub() {
+        Validate();
+        n1 = Number(n1);
+        n2 = Number(n2);
+        document.getElementById('demobox').innerText = n1 - n2;
+    }
+
+    window.onload = function init() {
+        document.getElementById('plus').addEventListener('click', Add, false);
+        document.getElementById('minus').addEventListener('click', Sub, false);
+    }
+
+    function Handler_err(msg, url, lno) {
+        var emsg = "Error :" + msg;
+        emsg += " Url :" + url;
+        emsg += " Line no. :" + lno;
+        console.log(emsg);
+
+    }
+</script>
+
+</body>
+</html>

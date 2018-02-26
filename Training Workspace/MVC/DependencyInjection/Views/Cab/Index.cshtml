@@ -1,0 +1,32 @@
+﻿@model IEnumerable<DependencyInjection.Models.Cab>
+@{
+    ViewBag.Title = "Index";
+}
+<style>
+    table td{
+        text-align:center;
+    }
+</style>
+<h2>Index</h2>
+
+<table >
+    <tr>
+        <th> &nbsp;&nbsp;&nbsp;@Html.DisplayNameFor(model => model.CabNo) &nbsp;&nbsp;&nbsp;</th>
+        <th> &nbsp;&nbsp;&nbsp;@Html.DisplayNameFor(model => model.Model) &nbsp;&nbsp;&nbsp;</th>
+        <th> &nbsp;&nbsp;&nbsp;@Html.DisplayNameFor(model => model.Capacity) &nbsp;&nbsp;&nbsp;</th>
+    </tr>
+    @foreach (var data in ViewBag.cab)
+    {
+        <tr>
+            <td>
+                @data.CabNo
+            </td>
+            <td>
+                @data.Model
+            </td>
+            <td>
+                @data.Capacity
+            </td>
+        </tr>
+    }
+</table>

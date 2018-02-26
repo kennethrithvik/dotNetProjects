@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <input type="text" id="txtdb" placeholder="enter something" />
+    <div id="ddiv"> </div>
+    <script>
+        var a = document.getElementById("txtdb");
+        var b = document.getElementById("ddiv");
+
+        a.addEventListener("onchange",function(){
+            b.innerText = a.value;
+        }, false);
+
+    </script>
+</body>
+</html>

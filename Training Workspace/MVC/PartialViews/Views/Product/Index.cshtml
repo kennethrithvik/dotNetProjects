@@ -1,0 +1,12 @@
+﻿@model IEnumerable<PartialViews.Models.Product>
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<div style="padding: 5px; width:850px; margin:0px auto;">
+    <h2>Index</h2>
+    @foreach (var item in Model)
+    {
+        @Html.Partial("_ProductData",item)
+    }
+</div>

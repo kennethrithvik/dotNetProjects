@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+    <siteMapNode url="" title="TMS"  description="This is root node for TMS">
+      
+      <siteMapNode url="~/Admin/AdminHomePage.aspx" title="Admin"  description="">
+        <siteMapNode url="~/Admin/EFManageEmployee.aspx" title="ManageEmployee"  description="" />
+        <siteMapNode url="~/Admin/EFManageTraining.aspx" title="ManageTraining"  description="" >
+          <siteMapNode url="~/Admin/AddTraining.aspx" title="Add Training"  description="" />
+        </siteMapNode>
+        <siteMapNode url="" title="Reports"  description="">
+          <siteMapNode url="" title="TrainingSchedule"  description="" />
+          <siteMapNode url="" title="Feedback"  description="" />
+        </siteMapNode>
+      </siteMapNode>
+      
+      <siteMapNode url="" title="Employee"  description="">
+        <siteMapNode url="" title="RequestTraining"  description="" />
+        <siteMapNode url="" title="ViewTraining"  description="" />
+      </siteMapNode>
+      
+    </siteMapNode>
+</siteMap>

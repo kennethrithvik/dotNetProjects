@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.DropDownList("StateRefID", ViewBag.state as IEnumerable<SelectListItem>, "----Select Item----")
+
+@Html.DropDownList("CityRefID", ViewBag.state as IEnumerable<SelectListItem>, "----Select Item----")
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/GetCities.js"></script>

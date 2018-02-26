@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Simple Json</title>
+    <style>
+        div {
+            border-radius: 8px;
+            text-align: center;
+            width: 40%;
+            position: absolute;
+            top: 100px;
+            left: 400px;
+        }
+        table {
+            background: lightskyblue;
+            text-align: center;
+            border: 2px dotted white;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+    var names = [];
+    window.onload = function init() {
+        var x = document.getElementById('btnAdd');
+        var y = document.getElementById('btnDel');
+        x.addEventListener("click", addData, false);
+        x.addEventListener("click", displayData, false);
+        y.addEventListener("click", deleteData, false);
+        y.addEventListener("click", displayData, false);
+    }
+
+
+    function addData() {
+        var x = document.getElementById("txtName").value;
+        var y = document.getElementById("txtNo").value;
+
+        var obj = new Object();
+        obj.nm = x;
+        obj.no = y;
+        //names.push(obj)
+        if (/[0-9]?/.test(y)) {
+            names.push(obj);
+        } else {
+            alert("Enter A correct no.");
+        }
+    }
+
+    function deleteData() {
+        var x = document.getElementById('txtName').value;
+        for (var i = 0; i < names.length; i++) {
+            if (names[i].nm === x) {
+                names.splice(i, 1);
+                i -= 1;
+            }
+        }
+    }
+
+    function deleteData1(name1,num) {
+        for (var i = 0; i < names.length; i++) {
+            if (names[i].nm === name1&&names[i].no===num) {
+                names.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+    function displayData() {
+        
+        var a = document.getElementById('tab');
+        a.innerHTML = "<tr><th>&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;Mobile Number&nbsp;&nbsp;&nbsp;</th></tr>";
+        var str="";
+        for (var i = 0; i < names.length; i++)
+        {
+            str += "<tr><td>" + names[i].nm + "</td><td>" + names[i].no
+                + "</td><td><input type=button value=Delete onclick=deleteData1(\""
+                + names[i].nm + "\",\"" + names[i].no + "\");displayData(); /></td></tr>";
+        }
+        a.innerHTML += str;
+    }
+    
+    </script>
+
+</head>
+<body>
+<input type="text"placeholder="Enter name to Add" id="txtName"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" placeholder="Enter number" id="txtNo" />
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="Add" id="btnAdd"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" value="Delete" id="btnDel" />
+<br/>
+<br/>
+<br/>
+<div>
+    <table id="tab">
+        
+
+    </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+On Authentication;    Message:Nexwave-PC\Nexwave;    accured at:11/20/2015 1:03:56 PM
+______________________________________________________________________
+On AuthenticationChallenge;    Message:System.Web.Mvc.ViewResult;    accured at:11/20/2015 1:03:56 PM
+______________________________________________________________________

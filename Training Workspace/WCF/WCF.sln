@@ -1,0 +1,58 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentService", "PaymentService\PaymentService.csproj", "{7504603C-002F-4062-81B7-66D3F57CE2A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPoolingPaymentClient", "CarPoolingPaymentClient\CarPoolingPaymentClient.csproj", "{30F57385-2CC4-4EDE-AA0B-8DCFA1D5A770}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7504603C-002F-4062-81B7-66D3F57CE2A1} = {7504603C-002F-4062-81B7-66D3F57CE2A1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewLayer", "ViewLayer\ViewLayer.csproj", "{0E0BD490-A2F9-46CB-BE5A-83BAB8C827DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLLayerCreditCard", "BLLayerCreditCard\BLLayerCreditCard.csproj", "{43124A01-F8E5-4875-8482-017C5A724D51}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7504603C-002F-4062-81B7-66D3F57CE2A1} = {7504603C-002F-4062-81B7-66D3F57CE2A1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfHostingServicePaymentLibraray", "SelfHostingServicePaymentLibraray\SelfHostingServicePaymentLibraray.csproj", "{4D695622-A295-48C8-9637-714A9A65C711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentServicePublishingConsole", "PaymentServicePublishingConsole\PaymentServicePublishingConsole.csproj", "{33734BF7-B260-4E68-BB6C-1C7CEB8CB342}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7504603C-002F-4062-81B7-66D3F57CE2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7504603C-002F-4062-81B7-66D3F57CE2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7504603C-002F-4062-81B7-66D3F57CE2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7504603C-002F-4062-81B7-66D3F57CE2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F57385-2CC4-4EDE-AA0B-8DCFA1D5A770}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F57385-2CC4-4EDE-AA0B-8DCFA1D5A770}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F57385-2CC4-4EDE-AA0B-8DCFA1D5A770}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F57385-2CC4-4EDE-AA0B-8DCFA1D5A770}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E0BD490-A2F9-46CB-BE5A-83BAB8C827DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E0BD490-A2F9-46CB-BE5A-83BAB8C827DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E0BD490-A2F9-46CB-BE5A-83BAB8C827DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E0BD490-A2F9-46CB-BE5A-83BAB8C827DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43124A01-F8E5-4875-8482-017C5A724D51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43124A01-F8E5-4875-8482-017C5A724D51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43124A01-F8E5-4875-8482-017C5A724D51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43124A01-F8E5-4875-8482-017C5A724D51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D695622-A295-48C8-9637-714A9A65C711}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D695622-A295-48C8-9637-714A9A65C711}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D695622-A295-48C8-9637-714A9A65C711}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D695622-A295-48C8-9637-714A9A65C711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33734BF7-B260-4E68-BB6C-1C7CEB8CB342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33734BF7-B260-4E68-BB6C-1C7CEB8CB342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33734BF7-B260-4E68-BB6C-1C7CEB8CB342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33734BF7-B260-4E68-BB6C-1C7CEB8CB342}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+--SRP: Single responsibility principle
+
+--OCP:open close principle
+
+--Program to interface not implemantation

@@ -1,0 +1,30 @@
+﻿@model PartialViews.Models.Product
+           <div class="products">
+               <div>
+                   @Html.Hidden("ProductID",Model.ID)
+               </div>
+               <div style="font-weight:bold;">
+                   @Html.LabelFor(m=>m.Name):@Html.DisplayFor(m=>m.Name)
+               </div>
+               <div style="color:green;">
+                   @Html.LabelFor(m => m.Price):@Html.DisplayFor(m => m.Price)
+               </div>
+               <div style="color:brown;">
+                   @Html.LabelFor(m => m.Description):@Html.DisplayFor(m => m.Description)
+               </div>
+               <div style="color:brown;">
+                  <img src="@Html.DisplayFor(m => m.ImagePath)" style="height:100%;width:100%;" />
+               </div>
+           </div>
+<style>
+    .products{
+        width:250px;
+        height:200px;
+        border:1px #ffd926 solid;
+        padding:15px;
+        float:left;
+        overflow:hidden;
+        overflow-wrap:break-word;
+        overflow-y:hidden;
+    }
+</style>

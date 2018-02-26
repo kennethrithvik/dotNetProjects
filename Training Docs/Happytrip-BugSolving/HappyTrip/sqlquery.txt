@@ -1,0 +1,86 @@
+
+*****************************************
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[AddFlights](@AirLineId int,@FlightName nvarchar(100))
+as begin
+INSERT INTO Flights (AirlineId, FlightName) VALUES(@AirLineId,@FlightName)
+end;
+
+******************************************
+USE [HappyIteration1]
+GO
+/****** Object:  StoredProcedure [dbo].[AddSchedules]    Script Date: 11/07/2015 14:38:52 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+create procedure [dbo].[AddSchedules](@flightid bigint,@routeid bigint,@departmenttime datetime,
+@arrivaltime datetime,@dur int,@isactive bit)
+as
+begin 
+
+insert into [Schedules](FlightId,RouteId,DepartureTime,ArrivalTime,DurationInMins,IsActive) 
+   values(@flightid,@routeid,@departmenttime,@arrivaltime,@dur,@isactive);
+  
+   end;
+
+*********************************
+USE [HappyIteration1]
+GO
+/****** Object:  StoredProcedure [dbo].[InsertFlightClasses]    Script Date: 11/07/2015 14:39:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ create procedure [dbo].[InsertFlightClasses](@FlightId bigint, @ClassId int, @NoOfSeats int)
+   as begin
+   insert into FlightClasses (FlightId, ClassId, NoOfSeats) values(@FlightId, @ClassId, @NoOfSeats);
+   end;
+   
+
+=======================================
+USE [HappyIteration1]
+GO
+/****** Object:  StoredProcedure [dbo].[AddFlightCosts]    Script Date: 11/08/2015 22:28:05 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+  Create procedure [dbo].[AddFlightCosts](@ScheduleID bigint,@ClassID int,@CostPerTicket decimal(18,0))
+   as 
+   begin
+   insert into FlightCosts(ScheduleID,ClassID,CostPerTicket) values
+   (@ScheduleID,@ClassID,@CostPerTicket);
+   end;
+=================================
+USE [HappyIteration1]
+GO
+/****** Object:  StoredProcedure [dbo].[AddCity]    Script Date: 11/08/2015 22:28:01 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+Create procedure [dbo].[AddCity](@CityName nvarchar(100),@StateId bigint)	
+as 
+begin
+INSERT INTO Cities (CityName, StateId) VALUES (@CityName,@StateId);
+end;
+
+
+============================
+USE [HappyIteration1]
+GO
+/****** Object:  StoredProcedure [dbo].[InsertRoute]    Script Date: 11/08/2015 22:49:08 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER procedure [dbo].[InsertRoute] (@fromcityID bigInt,@toCityID bigint,@dis decimal(18,0)
+,@st bit)
+as begin
+insert into [Routes] (FromCityId,ToCityId,DistanceInKms,[Status]
+)values(@fromcityID,@toCityID,@dis,@st);
+end;

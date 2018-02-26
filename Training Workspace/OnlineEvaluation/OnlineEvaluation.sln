@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEConsole", "OEConsole\OEConsole.csproj", "{DBC476FD-FD24-406E-A7CC-FB7DBA35829F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEDAL", "OEDAL\OEDAL.csproj", "{4A96B506-1A62-4E39-9A7C-E931CFB79354}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEBL", "OEBL\OEBL.csproj", "{33AFED81-A460-4893-A0B4-F7CD4FD11F5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEEntity", "OEEntity\OEEntity.csproj", "{E6402FA7-EBB8-49DE-9BF8-5FF8E335EFEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEWF", "OEWF\OEWF.csproj", "{415E703C-FAA2-4583-A52E-4C0CBFB6EF51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OEWebApp", "OEWebApp\OEWebApp.csproj", "{F833E043-A897-4948-B3C4-3AADDA177829}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DBC476FD-FD24-406E-A7CC-FB7DBA35829F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC476FD-FD24-406E-A7CC-FB7DBA35829F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC476FD-FD24-406E-A7CC-FB7DBA35829F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC476FD-FD24-406E-A7CC-FB7DBA35829F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A96B506-1A62-4E39-9A7C-E931CFB79354}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A96B506-1A62-4E39-9A7C-E931CFB79354}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A96B506-1A62-4E39-9A7C-E931CFB79354}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A96B506-1A62-4E39-9A7C-E931CFB79354}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33AFED81-A460-4893-A0B4-F7CD4FD11F5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33AFED81-A460-4893-A0B4-F7CD4FD11F5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33AFED81-A460-4893-A0B4-F7CD4FD11F5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33AFED81-A460-4893-A0B4-F7CD4FD11F5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6402FA7-EBB8-49DE-9BF8-5FF8E335EFEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6402FA7-EBB8-49DE-9BF8-5FF8E335EFEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6402FA7-EBB8-49DE-9BF8-5FF8E335EFEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6402FA7-EBB8-49DE-9BF8-5FF8E335EFEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415E703C-FAA2-4583-A52E-4C0CBFB6EF51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415E703C-FAA2-4583-A52E-4C0CBFB6EF51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415E703C-FAA2-4583-A52E-4C0CBFB6EF51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415E703C-FAA2-4583-A52E-4C0CBFB6EF51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F833E043-A897-4948-B3C4-3AADDA177829}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F833E043-A897-4948-B3C4-3AADDA177829}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F833E043-A897-4948-B3C4-3AADDA177829}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F833E043-A897-4948-B3C4-3AADDA177829}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

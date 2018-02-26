@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        table {
+            background: lightskyblue;
+            border-spacing: 20px;
+            text-align: center;
+            border: 2px dotted white;
+        }
+
+        td th {
+            padding: 20px;
+        }
+    </style>
+
+</head>
+<body ng-app="myApp" ng-controller="myController">
+   
+    <table>
+        <tr><th>Name</th><th>Phone no.</th></tr>
+        <tr ng-repeat="content in contents">
+            <td>{{content.name}}</td>
+            <td>{{content.population}}</td>
+           
+        </tr>
+    </table>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+        var Controller = app.controller("myController", function ($scope,$http) {
+            $scope.contents = [];
+            $http.get("Data/countries.txt").success(function (data) {
+                $scope.contents = data;
+                console.log($scope.contents)
+            });
+        });
+
+     
+    </script>
+</body>
+</html>

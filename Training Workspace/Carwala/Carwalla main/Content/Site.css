@@ -1,0 +1,79 @@
+﻿html, body{
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-color: #E5E5E5;
+    font-family: 'Roboto', sans-serif;
+    background:url('Images/bg/1.jpg') no-repeat center center; 
+    background-size: cover;
+}
+
+input[type="search"]{
+    left: 500px;
+}
+
+.main {
+    background-color:rgba(255,255,255,0.8);
+}
+
+header {
+    padding: 10px 30px 10px 30px;
+    color: #FFFFFF;
+    background-color: #FF5252;
+}
+header input[type=search] {
+    margin: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+    color: #FFFFFF;
+    background-color: #FF5252;
+}
+
+.main-content {
+    padding: 10px 30px 10px 30px;
+    color: #212121;    
+}
+
+.cars-content {
+    margin: 0px;
+    padding: 0px;
+}
+
+.cars-ad-content {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 0px;
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    background-color: #dedede;
+}
+.cars-ad-content:hover {
+    background-color: rgba(255,255,255,1);
+    transform: scale(1.04);
+}
+.cars-ad-content img {
+    width: 100%;
+}
+.cars-ad-content table {
+    margin: 0px;
+}
+#price-text {
+    background-color: #dedede;
+    padding: 4px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.shadow {
+    -webkit-box-shadow: 0 0 15px #bbb;
+    box-shadow: 0 0 15px #bbb;
+}

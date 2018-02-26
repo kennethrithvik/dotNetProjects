@@ -1,0 +1,31 @@
+﻿<form class="form-login" role="form">
+    <h2 class="form-login-heading">Sign up</h2>
+    <input type="number" class="form-control" placeholder="Employee ID" data-ng-model="registration.EmpID" required autofocus><hr />
+    <input type="text" class="form-control" placeholder="First Name" data-ng-model="registration.FName" required autofocus><hr />
+    <input type="text" class="form-control" placeholder="Last Name" data-ng-model="registration.LName" autofocus><hr />
+    <input type="text" class="form-control" placeholder="Email" data-ng-model="registration.userName" required autofocus><hr />
+    <input type="text" class="form-control" placeholder="Mobile Number" data-ng-model="registration.MobileNo" required autofocus><hr />
+    <input placeholder="Birth Date" class="textbox-n form-control" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" data-ng-model="registration.DOB" autofocus><hr />
+
+    <select ng-model="registration.Gender" class="form-control">
+        <option selected="selected" value="">Gender</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+    </select><hr />
+
+    <!--<div class="btn-group" data-toggle="buttons">        
+        <label class="btn active btn-default">
+            <input name="gender" id="male" ng-true-value="Male" checked="checked" class="active" type="radio" data-ng-model="registration.Gender">Male
+        </label>
+        <label class="btn btn-default">
+            <input name="gender" id="female" ng-true-value="Female" type="radio" data-ng-model="registration.Gender">Female
+        </label>        
+    </div><hr />-->
+
+    <input type="password" class="form-control" placeholder="Password" data-ng-model="registration.Password" required><hr />
+    <input type="password" class="form-control" placeholder="Confirm Password" data-ng-model="registration.ConfirmPassword" required><hr />
+    <button class="btn btn-lg btn-info btn-block" type="submit" data-ng-click="signUp()">Submit</button>
+    <div data-ng-hide="message == ''" data-ng-class="(savedSuccessfully) ? 'alert alert-success' : 'alert alert-danger'">
+        {{message}}
+    </div>
+</form>

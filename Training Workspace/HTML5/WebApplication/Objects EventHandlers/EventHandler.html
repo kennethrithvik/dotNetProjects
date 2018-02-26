@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <script>
+        function getMessage() {
+            var x = document.getElementById('txtName').value;
+            //alert('Welcome ' + x);
+            var y = document.getElementById('disp');
+            y.innerText = x;
+        }
+
+        window.onload=function init() {
+            //var x = document.getElementById('txtName').value;
+            var y = document.getElementById('btnMsg');
+            y.addEventListener('click', getMessage, false);
+
+        }
+    </script>
+
+    <style>
+       div {
+           background: aqua;
+           color: black;
+           height: 20px;
+           width: 80px;
+           border-radius: 12px;
+           text-align: center;
+       } 
+    </style>
+</head>
+<body>
+
+<input type="text" id="txtName" placeholder="Enter your name"/>
+<input type="button" id="btnMsg" value="Welcome"/>
+<br/><br/>
+<div id="disp"></div>
+
+</body>
+</html>

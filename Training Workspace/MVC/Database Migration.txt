@@ -1,0 +1,11 @@
+enable-migrations -Force -ContextTypeName CabContext
+
+add-migration InitialCreate..
+
+update-database
+
+
+
+
+
+Update-Database -TargetMigration AnyMigrationName

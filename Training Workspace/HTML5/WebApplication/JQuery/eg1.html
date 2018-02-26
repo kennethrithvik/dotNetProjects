@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+ <script src="../Scripts/jquery-2.1.4.js"></script>
+<div>Welcome1</div>
+<div>Welcome2</div>
+<div>Welcome3</div>
+<div>Welcome4</div>
+<div>Welcome5</div>
+<div>Welcome6</div>
+<input type="button" id="btnHide" value="Hide"/>
+<input type="button" id="btnShow" value="Show"/>
+<script>
+
+    $(document).ready(function() {
+        alert(jQuery.fn.jquery);
+    });
+    jQuery(document).ready(function () {
+        alert("call of method after pageload");
+    });
+
+
+
+
+    $(function() {
+        $("#btnHide").click(function() {
+            $("div").hide();
+        });
+        $("#btnShow").click(function() {
+            $("div").show();
+        });
+    });
+</script>
+
+
+</body>
+</html>

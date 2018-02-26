@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    
+</head>
+<body>
+<input type="text" id="txtName" placeholder="Enter ur Name"/>
+<input type="button" id="btnName" value="Show message"/>
+<br/>
+<br/>
+<div id="dispdiv">
+
+</div>
+
+    <script>
+
+    function Model() {
+        this.Name = "";
+        this.GetName = function () { return this.Name; }
+        this.SetName = function (name1) { this.Name = name1; }
+    }
+
+    function View(model) {
+        this.update = function (model) {
+            var name = model.GetName();
+            document.getElementById("dispdiv").innerHTML = "Hello  " + name;
+        }
+    }
+
+    function Controller(view, model) {
+        this.init = function () {
+            var namebox = document.getElementById("txtName");
+            namebox.addEventListener("blur", function () { model.SetName(namebox.value); }, false);
+        }
+        var msgBox = document.getElementById("btnName");
+        msgBox.addEventListener("click", function () { view.update(model); }, false);
+    }
+
+    var model1 = new Model();
+    var view1 = new View(model1);
+    var controller1 = new Controller(view1, model1);
+    controller1.init();
+
+
+    </script>
+
+</body>
+</html>

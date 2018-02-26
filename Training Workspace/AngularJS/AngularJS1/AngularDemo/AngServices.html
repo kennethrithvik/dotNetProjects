@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+      
+    </style>
+
+</head>
+<body ng-app="myApp" ng-controller="CalculatorController">
+
+    <input type="number" ng-model="n1" />&nbsp;&nbsp;&nbsp;
+    <input type="number" ng-model="n2" />&nbsp;&nbsp;&nbsp;
+    <button ng-click="add()">ADD</button>&nbsp;&nbsp;&nbsp;
+    <button ng-click="sub()">Subtract</button><br />
+
+    <div>Answer: {{answer}}</div>
+
+
+
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.service("MathService", function () {
+            this.add = function (a, b) { return a + b };
+            this.sub = function (a, b) { return a - b };
+            this.mul = function (a, b) { return a * b };
+            this.div = function (a, b) { return a / b };
+
+            this.addtoservice = function (item) {
+                //add to collection
+            };
+
+            this.getservice = function (item) {
+                return item;
+            };
+        });
+
+        var Controller = app.controller("CalculatorController", function ($scope,MathService) {
+            $scope.add = function () {
+                $scope.answer=MathService.add($scope.n1,$scope.n2)
+            }
+
+            $scope.sub = function () {
+                $scope.answer = MathService.sub($scope.n1, $scope.n2)
+            }
+        });
+
+
+    </script>
+</body>
+</html>

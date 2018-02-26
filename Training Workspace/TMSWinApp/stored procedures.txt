@@ -1,0 +1,132 @@
+create proc [dbo].[GetEmployees]
+as
+select employeeid,e.name,dob,DOJ,d.name as dname,r.name as [role name],
+case when mgrid IS null then 0
+else mgrid
+end as MgrID
+ from Employee e inner join department d
+ on e.departmentid=d.departmentid
+ join [role] r on e.roleid=r.roleid
+ where empstatus=1;
+
+
+
+
+create proc [dbo].[AddEmployee] (@name nvarchar(40),@dob date,@doj date,@rid tinyint,
+ @dpid tinyint ,@mgrid int,@logname nvarchar(40),@pass nvarchar(40))
+ as
+ begin
+            begin tran addemp
+            
+              --begin tran nested
+               
+              -- @@trancount//count of transaction happening.
+              --if(true)
+              --  begin 
+              --     if(@@error  number --error will have number, there is no exception class in sql, procedural language
+              --  end
+                begin try
+                declare @eid int
+                
+                insert Employee(Name,DOB,DOJ,RoleID,DepartmentID,MGRID)
+                values(@name,@dob,@doj,@rid, @dpid,@mgrid)
+                set @eid=    IDENT_CURRENT('employee')     
+                  --@@IDENTITY, last tables value is stored ,troublesome
+                  insert [Login] values(@eid,@logname,@pass)
+                  commit tran addemp
+                end try 
+                begin catch
+                --print 'aaa'
+                
+                rollback tran addemp
+                declare @ermsg nvarchar(max)
+                set @ermsg = ERROR_MESSAGE()
+                raiserror(@ermsg,16,1)
+                end catch
+         
+            
+            
+ end
+
+
+
+
+
+create proc [dbo].[GetEmpCount](@empcount int output)
+as 
+select @empcount=COunt(*) from Employee
+
+
+
+create proc [dbo].[GetEmployeesByName](@name nvarchar(50))
+as  
+select Employeeid,e.Name,DOB,DOJ,d.Name as DeptName,RoleName = r.Name,
+case when MGRID  is null then 0
+else MGRID
+end as MgrID
+from Employee e inner join Department d
+on e.DepartmentID = d.DepartmentID
+join [Role] r
+on e.RoleID = r.RoleID
+where E.nAME LIKE @NAME + '%' AND EmpStatus=1
+order by DOB;
+
+
+create proc [dbo].[EditEmployee] (@eid int,@name nvarchar(40),@dob date,@doj date,@rid tinyint,
+ @dpid tinyint ,@mgrid int,@logname nvarchar(40),@pass nvarchar(40))
+ as
+ begin
+            begin tran editemp
+            
+              --begin tran nested
+               
+              -- @@trancount//count of transaction happening.
+              --if(true)
+              --  begin 
+              --     if(@@error  number --error will have number, there is no exception class in sql, procedural language
+              --  end
+                begin try
+                
+                update Employee set Name=@name,DOB=@dob,DOJ=@doj,RoleID=@rid,DepartmentID=@dpid,MGRID=@mgrid
+                where EmployeeID=@eid
+  
+                  update [Login] set LoginName=@logname,[Password]=@pass
+                  where EmployeeID=@eid 
+                  commit tran editemp
+                end try 
+                begin catch
+                --print 'aaa'
+                
+                rollback tran editemp
+                declare @ermsg nvarchar(max)
+                set @ermsg = ERROR_MESSAGE()
+                raiserror(@ermsg,16,1)
+                end catch
+         
+            
+            
+ end
+
+
+create proc [dbo].[DeleteEmp] (@eid int)
+ as
+ begin
+            begin tran delemp
+
+                begin try
+                
+                update Employee set EmpStatus=2
+                where EmployeeID=@eid
+
+            commit tran delemp
+            
+                end try 
+                
+                begin catch
+                rollback tran editemp
+                declare @ermsg nvarchar(max)
+                set @ermsg = ERROR_MESSAGE()
+                raiserror(@ermsg,16,1)
+                end catch
+
+ end

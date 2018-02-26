@@ -1,0 +1,82 @@
+﻿
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        table{
+            border:2px solid rgba(3, 250, 227, 0.91);
+            text-align:center;
+            position:absolute;
+            top:20%;
+            left:30%;
+            background-color:#034dfe;
+            color:white;
+            padding:20px;
+            
+        }
+        input{
+            width:100%;
+            height:100%;
+        }
+    </style>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/app.js"></script>
+    <script src="Scripts/i18n/angular-locale_ta-in.js"></script>
+    <!--<script src="Scripts/i18n/angular-locale_en.js"></script>-->
+    
+</head>
+<body ng-app="MyApp" ng-controller="FormController">
+    <table>
+        <tr>
+            <td>
+                <label>Enter your Name</label>
+            </td>
+            <td>
+                <input type="text" ng-model="formobj.name" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Enter your Address</label>
+            </td>
+            <td>
+                <input type="text" ng-model="formobj.add" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Enter your Mobile</label>
+            </td>
+            <td>
+                <input type="text" ng-model="formobj.mob" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label>Enter your Birth Date&nbsp;&nbsp;&nbsp;</label>
+            </td>
+            <td>
+                <input type="date" ng-model="formobj.dob" /><br /><br />
+            </td>
+        </tr>
+        <tr>
+            <th></th>
+            <th>
+                <input type="button" ng-click="submit()" value="submit" />
+            </th>
+        </tr>
+    </table>
+    <p><pre>
+        Your name is {{formobj.name}}
+        Your Address is {{formobj.add}}
+        Your Mobile Number is {{formobj.mob}}
+        Your Birth Date is {{formobj.dob | date: "fullDate"}}
+        Currency  {{55643|currency}}
+        Number  {{54563545456|number:7}}
+    </pre>
+    </p>
+
+</body>
+</html>

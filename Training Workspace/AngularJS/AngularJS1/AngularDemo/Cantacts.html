@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        table {
+            background: lightskyblue;
+            border-spacing:20px;
+            text-align: center;
+            border: 2px dotted white;
+        }
+        td th{
+            padding:20px;
+        }
+    </style>
+
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    <input type="text" ng-model="name" placeholder="Enter name"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" ng-model="mob" placeholder="Enter mobile number"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="button" value="Add" ng-click="addName()" />
+    <br /><br />
+    <input type="search" placeholder="Search...." ng-model="sk" />
+    
+    <h3>Contents</h3>
+    <hr />
+    <table>
+        <tr><th>Name</th><th>Phone no.</th></tr>
+        <tr ng-repeat="content in contents|filter:sk">
+            <td>{{content.name}}</td>
+            <td>{{content.mob}}</td>
+            <td><input type="button" value="Delete" ng-click=delete($index) />{{content.$$hashKey}}</td>
+        </tr>
+    </table>
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+        var Controller = app.controller("myController", function ($scope) {
+            $scope.contents = [];           
+            $scope.addName = function () {
+                var f = new Contact($scope.name, $scope.mob)
+                $scope.contents.push(f);
+                console.log($scope.contents);
+            }
+            $scope.sfilter = function (val) {
+                if ($scope.sbox == undefined) return true;
+                return (val.name.indexOf($scope.sbox)>-1 );
+            };
+            $scope.delete = function (index) {
+                $scope.contents.splice(index, 1);
+            }
+        });
+
+        var Contact = function (_name, _mob) {
+            this.name = _name;
+            this.mob = _mob;
+        }
+    </script>
+</body>
+</html>

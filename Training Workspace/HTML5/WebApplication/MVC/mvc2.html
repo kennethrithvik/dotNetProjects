@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            border-radius: 8px;
+            text-align: center;
+            width: 40%;
+            position: absolute;
+            top: 100px;
+            left: 400px;
+        }
+
+        table {
+            background: lightskyblue;
+            text-align: center;
+            border: 2px dotted white;
+        }
+    </style>
+
+</head>
+<body>
+<input type="text" id="txtName" placeholder="Enter ur Name"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="text" id="txtMob" placeholder="Enter ur Mobile no." />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <input type="button" id="btnAdd" value="Add Contact" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <br />
+    <br />
+    <div>
+        <table id="tab"></table>
+    </div>
+
+    <script>
+
+        function Contact(_name, _mob)
+        {
+            this.name = _name;
+            this.mob = _mob;
+        }
+
+        function Model()
+        {
+            this.contacts = [];
+            this.AddContact = function (contact)
+            {
+                this.contacts.push(contact);
+            }
+            this.GetContacts = function ()
+            {
+                return this.contacts;
+            }
+            this.DeleteByName = function (name)
+            {
+                for (var i = 0; i < this.contacts.length; i++)
+                {
+                    if (this.contacts[i].name === name)
+                    {
+                        this.contacts.splice(i, 1);
+                        i -= 1;
+                    }
+                }
+            }
+            this.DeleteByIN=function (ind)
+            {
+                this.contacts.splice(ind, 1);
+            }
+        }
+
+        function View(model)
+        {
+            this.DisplayContacts = function (contacts1)
+            {
+                var a = document.getElementById('tab');
+                a.innerHTML = "<tr><th>&nbsp;&nbsp;&nbsp;Name&nbsp;&nbsp;&nbsp;</th><th>&nbsp;&nbsp;&nbsp;Mobile Number&nbsp;&nbsp;&nbsp;</th></tr>";
+                var str = "";
+                for (var i = 0; i < contacts1.length; i++)
+                {
+                    str += "<tr><td>" + contacts1[i].name + "</td><td>" + contacts1[i].mob
+                        + "</td><td><input type=button value=Delete onclick=DeleteDatai("
+                        + i + ") /></td></tr>";
+                }
+                a.innerHTML += str;
+            }
+            
+        }
+
+        function DeleteDatai(ind)
+        {
+            controller1.DeleteContact(ind);
+        }
+
+
+        function Controller(view, model) {
+            var myself = this;
+            this.init = function ()
+            { 
+                var adbtn = document.getElementById("btnAdd");
+                adbtn.addEventListener("click", function ()
+                {
+                    var namebox = document.getElementById("txtName").value;
+                    var mobbox = document.getElementById("txtMob").value;
+                    var con = new Contact(namebox, mobbox);
+                    model.AddContact(con);
+                    view.DisplayContacts(model.GetContacts());
+
+                }, false);
+            }
+            this.DeleteContact = function (ind)
+            {
+                model.DeleteByIN(ind);
+                view.DisplayContacts(model.GetContacts());
+            }
+        }
+
+        var model1 = new Model();
+        var view1 = new View(model1);
+        var controller1 = new Controller(view1, model1);
+        controller1.init();
+
+
+    </script>
+
+</body>
+</html>

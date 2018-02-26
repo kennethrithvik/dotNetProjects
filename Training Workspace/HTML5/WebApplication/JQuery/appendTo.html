@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    <script src="../Scripts/jquery-2.1.4.intellisense.js"></script>
+<ul>
+    <li>aaaa</li>
+    <li>bbbb</li>
+    <li>cccc</li>
+    <li>dddd</li>
+    <li>eeee</li>
+</ul>
+    <div id="cln"></div>
+    <script>
+        //jQuery("ul").clone().appendTo("body");
+        jQuery("ul").append("<li>ffff</li>");
+        jQuery("ul").clone().appendTo("#cln");
+    </script>
+
+</body>
+</html>

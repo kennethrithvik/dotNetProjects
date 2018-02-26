@@ -1,0 +1,99 @@
+Student Course management system
+
+Columns
+
+  Id .. Name .. Gender .. Course .. Address .. Proctor .. Assessment marks .. 
+
+All nouns are entities.
+Entities are something from which you can derive some data.
+
+Entities:
+
+  1.Student  StudentName, Address, MobileNo 
+  2.Course  CourseName, Duration, TotalFees
+ /////////////  3.Subject 
+ /////////////  4.Assessment
+ ///////////// 5.Assignment
+
+  3. Fee StudentName, AmountPaid, PaidDate
+  4. Balance StudentName, BalanceAmount
+
+
+Relationships:
+
+   Student joins for a course
+   student takes an assessment
+   Student pays some fee
+   Course has a fee
+   Course has an assignment
+   Student has balance
+   Fee has a Balance  
+
+******************* NOTES ******************
+
+Diamond - Relationships
+Square - Entities \
+
+ERD - Entity relationship diagram
+
+Multiplicity
+
+Count between relationships
+ one to one
+ one to many
+ many to many
+
+
+Key attribute 
+  An attribute which uniquely identifies a row...
+
+Multivaluad attribute
+  An attribute which has more than one components
+
+Types of languages in SQL
+DDL - Data defenition Language
+  
+  You are handling the database, creating the tables, columns
+
+LANGUAGES IN RDBMS
+DDL:
+
+CREATE
+ALTER
+DROP
+TRUNCATE
+RENAME
+
+***********
+
+DML - Date manipulation Language
+
+INSERT
+UPDATE
+DELETE
+CALL
+
+***********
+
+DCL - Data control language, Generally used by DBA
+
+GRANT
+REVOKE
+
+
+************
+
+TCL - Transaction Control language
+
+Transaction - set of a instructions executed as a single operation
+
+COMMIT
+ROLLBACK
+SAVEPOINT
+SET TRANSACTION
+
+***********
+
+DQL - Data query language
+
+SELECT

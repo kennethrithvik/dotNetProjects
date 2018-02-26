@@ -1,0 +1,4 @@
+14,ryrtyhrt,2/2/2015,5,False,TV
+1005,intex,10/4/2015,5,False,mobile
+1002,Onida,1/1/2014,10,False,TV
+1007,Xiaomi,10/10/2015,67,False,mobile

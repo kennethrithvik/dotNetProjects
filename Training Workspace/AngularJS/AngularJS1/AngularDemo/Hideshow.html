@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        img{
+            position: absolute;
+            top:100px;
+            left:100px;
+            width:600px;
+            height:600px;
+        }
+    </style>
+
+</head>
+<body ng-app="myApp" ng-controller="myController">
+    
+    Select Your Mood:-&nbsp;&nbsp;&nbsp;
+    <select ng-model="mood" ng-change="disp1()">
+        <option value="0">angry</option>
+        <option value="1">sad</option>
+        <option value="2">happy</option>
+    </select>
+    <br /><br /><br /><br />
+
+    <img ng-src="{{src}}" />
+    
+
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+        var Controller = app.controller("myController", function ($scope) {
+            $scope.imgs = ["ang.png", "sad.png", "happy.jpg"]
+            $scope.disp1 = function () {
+                $scope.src = "../images/emoticons/" + $scope.imgs[$scope.mood];
+            }
+        });
+
+
+    </script>
+</body>
+</html>

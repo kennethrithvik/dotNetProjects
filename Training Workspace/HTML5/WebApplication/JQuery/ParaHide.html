@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <script src="../Scripts/jquery-2.1.4.js"></script>
+    <script src="../Scripts/jquery-2.1.4.intellisense.js"></script>
+<p id="p1">aaaaaaaaaaaaaaaaaaaa</p>
+<p id="p2">bbbbbbbbbbbbbbbbbbbb</p>
+<p id="p3">cccccccccccccccccccc</p>
+<p id="p4">dddddddddddddddddddd</p>
+    <select id="sel"></select>&nbsp;&nbsp;<input type="button" id="btnShow" value="Show"/>&nbsp;&nbsp;<input type="button" id="btnHide" value="Hide" />
+
+<script>
+    $(document).ready(function () {
+        $("p").each(function() {
+            $("#sel").append("<option >" + $(this).attr("id") + "</option>");
+        });
+    });
+    $("#btnHide").click(function() {
+        $("#" + $("#sel").find(":selected").text()).hide();
+    });
+    $("#btnShow").click(function () {
+        $("#" + $("#sel").find(":selected").text()).show();
+    });
+</script>
+
+</body>
+</html>

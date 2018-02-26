@@ -1,0 +1,42 @@
+﻿body {
+}
+
+h2.MainHeading {
+    font-family:Arial;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin: 10px 10px 10px 30px;
+    padding: 10px;
+    text-decoration: underline;
+    color: blueviolet;
+    height: 253px;
+}
+th {
+    margin: 5px;
+    font-family: Arial;
+    color: blue;
+    text-align: center;
+}
+#header {
+    margin: 15px;
+    padding: 10px;
+    height: 200px;
+
+}
+#leftcolumn {
+    margin: 5px;
+    padding: 10px;
+    width: 20%;
+    height: 500px;
+    float: left;
+
+}
+#rightcolumn {
+    margin: 5px;
+    padding: 10px;
+    width: 70%;
+    height: 500px;
+    float: right;
+
+}

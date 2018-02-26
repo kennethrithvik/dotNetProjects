@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="Scripts/jquery-2.1.4.js"></script>
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <script src="Scripts/jquery-ui-1.11.4.js"></script>
+    <script src="Scripts/jquery-ui-1.11.4.min.js"></script>
+    
+</head>
+
+<body>
+    
+   City Name : <input id="txtName" type="text" />
+   
+
+    <div></div>
+
+    <script>
+    $("#txtName").autocomplete({
+
+        source: function (request, response) {
+            $.ajax({
+                type: 'GET',
+                url: 'http://gd.geobytes.com/AutoCompleteCity?callback=?&q=' + request.term,
+                dataType: 'jsonp',
+                contentType :'application/json; charset=utf-8',
+                //data: { "id": request.term },
+                success: function (data) {
+                    response(data);
+                    $.each(data, function (item, value) {
+                        console.log(value);
+                     
+                    })
+                   
+                    console.log(data);
+                    console.log("I reached here");
+
+                },
+                error: function (msg) {
+                    console.log(msg);
+                }
+            });
+        }
+
+    });
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        div {
+            z-index: 100;
+        }
+    </style>
+</head>
+
+<body class="js__p_start">
+    <script src="Scripts/jquery-2.1.4.min.js"></script>
+    <link href="styles/jquery.popup.css" rel="stylesheet" />
+    <link href="styles/jquery.rateyo.css" rel="stylesheet" />
+    <script src="Scripts/jquery.rateyo.js"></script>
+    <script src="Scripts/jquery.popup.js"></script>
+    <div id="rateYo"></div>
+    <script>
+        $("#rateYo").rateYo(
+            {
+                rating: 3.6,
+                starWidth: "25px",
+                ratedFill: "gold",
+
+                onChange: function (rating, rateYoInstance) {
+                    console.log(rating);
+                }
+            }
+        );
+    </script>
+
+   
+    <div class="p_body js__p_body js__fadeout"></div>
+    <div class="popup js__popup js__slide_top">
+        <a href="#" class="p_close js__p_close" title="Close"></a>
+        <div class="p_content">
+            <img src="images/tesco_logo.png"/>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        $(function () {
+            $(".js__p_start, .js__p_another_start").simplePopup();
+        });
+    </script>
+
+
+</body>
+</html>

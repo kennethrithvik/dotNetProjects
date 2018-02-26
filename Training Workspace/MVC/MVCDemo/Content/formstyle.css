@@ -1,0 +1,41 @@
+﻿        body {
+            font-family: Arial, Sans-Serif;
+        }
+
+        #heading {
+            text-align: center;
+            font-size: larger;
+            font-style: normal;
+        }
+
+        #container {
+            width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Nicely lines up the labels. */
+        form label {
+            display: inline-block;
+            width: 140px;
+        }
+
+        /* You could add a class to all the input boxes instead, if you like. That would be safer, and more backwards-compatible */
+        form input[type="text"],
+        form input[type="password"],
+        form input[type="email"] {
+            width: 160px;
+        }
+        form{
+            border: 1px solid green;
+            background-color:rgba(0, 239, 255, 0.68);
+            padding:100px;
+            padding-right:100px;
+        }
+        form .line {
+            clear: both;
+        }
+
+            form .line.submit {
+                text-align: right;
+            }
+

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<script src="../Scripts/jquery-2.1.4.js"></script>
+
+<input type="text" id="txtName" placeholder="Enter Name"/>
+<input type="button" id="btnName" value="Enter" />
+    <div id="fn"></div>
+
+    <div id="ln" ></div>
+
+    <script>
+
+    $(function() {
+        $("#btnName").click(function() {
+            var nm = $("#txtName").val();
+            $("#dispdiv").text(nm);
+
+        });
+        $("#txtName").change(function() {
+            if ($("#txtName").val() === "") {
+                $("#fn").show();
+                $("#fn").text("Name cannot be blank");
+            }
+            else {
+                $("#fn").hide();
+            }
+        });
+    });
+    </script>
+
+    <div id="dispdiv"></div>
+</body>
+</html>

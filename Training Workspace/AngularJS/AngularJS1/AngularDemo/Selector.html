@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+       
+    </style>
+
+</head>
+<body ng-app="myApp" ng-controller="myController">
+
+    <select ng-model="name">
+        <option ng-repeat="content in contents">
+            {{content}}
+        </option>
+     </select>
+    <br /><br /><br /><br />
+     <div ng-if="name" ng-model="ddiv">Hello  {{name}}</div>  
+
+
+    <script src="Scripts/angular.min.js"></script>
+    <script>
+        var app = angular.module("myApp", []);
+        var Controller = app.controller("myController", function ($scope) {
+            $scope.contents = ["aaaaa", "bbbbbb", "cccccc", "ddddddddd", "eeeeeee", "ffffffff", "gggggggg", "hhhhhhhhhh", "iiiiiii", "jjjjjjjj", ];
+            
+        });
+
+   
+    </script>
+</body>
+</html>
